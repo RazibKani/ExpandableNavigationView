@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/razibkani/Github_Repo/ExpandableNavigationView/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png",
+        "source": "/home/razibkani/Github_Repo/ExpandableNavigationView/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/razibkani/Github_Repo/ExpandableNavigationView/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/arrow_below.png",
+        "source": "/home/razibkani/Github_Repo/ExpandableNavigationView/app/src/main/res/mipmap-hdpi/arrow_below.png"
+    },
+    {
+        "merged": "/home/razibkani/Github_Repo/ExpandableNavigationView/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/arrow_right.png",
+        "source": "/home/razibkani/Github_Repo/ExpandableNavigationView/app/src/main/res/mipmap-hdpi/arrow_right.png"
+    }
+]
