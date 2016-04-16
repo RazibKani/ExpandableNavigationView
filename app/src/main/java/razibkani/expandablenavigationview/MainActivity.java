@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
 
     private ExpandableListView sidebarList;
     private SidebarAdapter mAdapter;
+    private DrawerLayout drawer;
     private List<String> listParentSidebar;
+    private List<String> programChild;
     private HashMap<String, List<String>> listChildSidebar;
 
     @Override
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
         listParentSidebar.add(Constant.S_POS_ABOUT, "About Us");
 
         // Adding child data
-        List<String> programChild = new ArrayList<String>();
+        programChild = new ArrayList<String>();
         programChild.add("Program 1");
         programChild.add("Program 2");
         programChild.add("Program 3");
@@ -119,8 +121,11 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
     // Handling click on child item
     @Override
     public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-        showToast("Group: " + listParentSidebar.get(groupPosition) + " " + "Child: "
-            + (String) listChildSidebar.get(groupPosition).get(childPosition));
+        if (groupPosition == 2) { // index program
+            showToast(programChild.get(childPosition));
+        }
+
+        drawer.closeDrawer(GravityCompat.START); // close drawer
         return true;
     }
 
@@ -157,7 +162,6 @@ public class MainActivity extends AppCompatActivity implements ExpandableListVie
         }
 
         if (!isHaveChild) { // if don't have child, close drawer
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
         }
 
